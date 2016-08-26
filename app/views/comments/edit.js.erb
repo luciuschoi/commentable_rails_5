@@ -1,0 +1,4 @@
+$("#comment_<%= @comment.id %>").append("<%=j render('comments/form', comment: @comment ) %>");
+$("#comment_<%= @comment.id %> form").hide().slideDown();
+$("#comment_<%= @comment.id %>_edit").hide();
+$('#comment_<%= @comment.id %> .comment_content textarea').trigger('keyup');

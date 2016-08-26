@@ -1,0 +1,7 @@
+<%= simple_form_for [comment.commentable, comment], remote: true do | f | %>
+  <%= f.input :content, as: :text, label: false, input_html: { rows: 5, data:{ "comment-id": comment.persisted? ? comment.id : 'new' } } %>
+  <span id='counter_<%= comment.persisted? ? comment.id : 'new' %>'>255자까지 입력할 수 있음.</span>
+  <%= link_to "Close", "", data:{'comment-id': comment.id }, class: 'close_button btn btn-outline-primary pull-xs-right', style: 'margin-left: .5em' if comment.persisted? %>
+  <%= f.button :submit, class: 'btn btn-outline-primary pull-xs-right' %>
+  <div class='clearfix'></div>
+<% end %>

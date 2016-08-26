@@ -1,0 +1,20 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.comment_frame {
+  margin-bottom: 1em;
+  h3 {
+    margin-bottom: .5em;
+  }
+  .comments {
+    margin-bottom: 1em;
+    .comment .simple_form {
+      padding-left:1em;
+      margin-top:.5em;
+    }
+  }
+  .simple_form {
+    margin-bottom: 1em;
+  }
+}

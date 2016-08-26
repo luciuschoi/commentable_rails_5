@@ -1,0 +1,22 @@
+
+@import "bootstrap";
+@import "jquery-ui";
+@import "posts";
+@import "comments";
+// @import "scaffolds";
+
+
+// .btn-outline-primary,
+// .btn-outline-secondary,
+// .btn-outline-info,
+// .btn-outline-warning,
+// .btn-outline-success,
+// .btn-outline-danger,
+// .btn-outline-link {
+//   background-color: white ;
+// }
+
+
+[class*="btn-outline"] {
+  background-color: white ;
+}
