@@ -1,5 +1,11 @@
-$("#comments_count_of_<%= @commentable.model_name.route_key %>_<%= @commentable.id %>").html("<%= @commentable.comments.size %>")
-$("#comment_<%= @comment.id %>").replaceWith("<%=j render @comment %>");
-$("#comment_<%= @comment.id %>").effect( "highlight", {color:"#cdff7c"}, 3000 );
-$("#<%= @commentable.model_name.route_key %>_<%= @commentable.id %>_comment_form form")[0].reset();
-$("#comment_<%= @comment.id %>_edit").show();
+<% if @comment.errors.size.zero? %>
+  $("#comments_count_of_<%= @commentable.model_name.route_key %>_<%= @commentable.id %>").html("<%= @commentable.comments.size %>")
+  $("#comment_<%= @comment.id %>").replaceWith("<%=j render @comment %>");
+  $("#comment_<%= @comment.id %>").effect( "highlight", {color:"#cdff7c"}, 3000 );
+  $("#<%= @commentable.model_name.route_key %>_<%= @commentable.id %>_comment_form form")[0].reset();
+  $("#comment_<%= @comment.id %>_edit").show();
+<% else %>
+  console.log("validation errors : <%= @comment.errors.size %>")
+  $("#comment_<%= @comment.id %> form").prepend("<div id='comment_flash_message' class='alert alert-danger'><%= @comment.errors.values.join(', ') %></div>");
+  $("#comment_flash_message").delay(800).slideUp('slow');  
+<% end %>

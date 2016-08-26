@@ -1,5 +1,9 @@
 <li id="comment_<%= comment.id %>" class='comment'>
-  <%= comment.content %>
-  <%= link_to "수정", edit_polymorphic_url([comment.commentable, comment]), id: "comment_#{comment.id}_edit", data:{ "comment-id": comment.id }, remote: true %>
-  <%= link_to '삭제', [comment.commentable, comment], method: :delete, data: { confirm: "Are you sure?"}, remote: true %>
+  <div class="content_of_comment">
+    <%= comment.content %>
+  </div>
+  <div class="status_of_comment">
+    <%= link_to "수정", edit_polymorphic_url([comment.commentable, comment]), id: "comment_#{comment.id}_edit", data:{ "comment-id": comment.id }, remote: true %>
+    <%= link_to '삭제', [comment.commentable, comment], method: :delete, data: { confirm: "Are you sure?"}, remote: true %>
+  </div>
 </li>

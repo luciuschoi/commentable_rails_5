@@ -17,13 +17,13 @@
 
 <div class="comment_frame">
   <h3>Comments <small id='commentable_<%= @post.id %>_comments_size'><%= @post.comments.size %></small></h3>
-  <div id="commentable_<%= @post.id %>_comments" class="comments">
+  <ul id="commentable_<%= @post.id %>_comments" class="comments">
     <% if @post.comments.any? %>
       <%= render @post.comments %>
     <% else %>
-      댓글이 없음.
+      <li>댓글이 없음.</li>
     <% end %>
-  </div>
+  </ul>
   <div id="commentable_<%= @post.id %>_comment_form" class="comment_form">
     <%= render "comments/form", comment: @post.comments.build %>
   </div>

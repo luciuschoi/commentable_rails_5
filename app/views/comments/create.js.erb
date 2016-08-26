@@ -5,7 +5,7 @@
     $("#commentable_<%= @commentable.id %>_comments").html("<%=j render(@comment) %>");
   <% end %>
   $("#comment_<%= @comment.id %>").hide().slideDown().effect( "highlight", {color:"#87dbff"}, 3000 );
-  $("#commentable_<%= @commentable.id %>_comments_size").text("<%= @commentable.comments.size %>").effect("highlight", {color: 'red'}, 3000);
+  $("#commentable_<%= @commentable.id %>_comments_size").text("<%= @commentable.comments.size %>").effect("highlight", {}, 3000);
   $("#counter_new").text('255자까지 입력할 수 있음.');
   $("#commentable_<%= @commentable.id %>_comment_form form")[0].reset();
 <% else %>

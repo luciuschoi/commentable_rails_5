@@ -5,13 +5,33 @@
 .comment_frame {
   margin-bottom: 1em;
   h3 {
-    margin-bottom: .5em;
-  }
-  .comments {
     margin-bottom: 1em;
+  }
+  ul.comments {
+    list-style-type: none;
+    padding-left:0;
+    margin-bottom: 1em;
+    li:only-child {
+      border-radius: 5px;
+    }
+    li.comment {
+      margin-bottom: 1em;
+      .content_of_comment {
+        border: 1px solid #eaeaea;
+        border-bottom: 0;
+        border-radius: 5px 5px 0 0;
+        padding: 1em;
+      }
+      .status_of_comment {
+        border: 1px solid #eaeaea;
+        border-radius: 0 0 5px 5px;
+        padding: 1em;
+        background-color: #eeeeee;
+      }
+    }
     .comment .simple_form {
-      padding-left:1em;
       margin-top:.5em;
+      margin-bottom: 0;
     }
   }
   .simple_form {
