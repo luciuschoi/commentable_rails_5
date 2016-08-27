@@ -16,6 +16,9 @@
     }
     li.comment {
       margin-bottom: 1em;
+      border: 1px solid #eaeaea;
+      border-radius: 6px;
+      &:hover { border: 1px solid #0275d8; background-color: #b9defe; box-shadow: 0 0 7px #888888;}
       .content_of_comment {
         border: 1px solid #eaeaea;
         border-bottom: 0;
