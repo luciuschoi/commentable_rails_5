@@ -15,16 +15,5 @@
   <%= link_to 'Back', posts_path, class: 'btn btn-outline-success' %>
 </div>
 
-<div class="comment_frame">
-  <h3>Comments <small id='commentable_<%= @post.id %>_comments_size'><%= @post.comments.size %></small></h3>
-  <ul id="commentable_<%= @post.id %>_comments" class="comments">
-    <% if @post.comments.any? %>
-      <%= render @post.comments %>
-    <% else %>
-      <li>댓글이 없음.</li>
-    <% end %>
-  </ul>
-  <div id="commentable_<%= @post.id %>_comment_form" class="comment_form">
-    <%= render "comments/form", comment: @post.comments.build %>
-  </div>
-</div>
+
+<%= render "comments/comment_frame", commentable: @post %>
